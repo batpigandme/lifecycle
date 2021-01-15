@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Embed a lifecycle badge in documentation — badge • lifecycle</title>
+<title>License • lifecycle</title>
 
 
 <!-- jquery -->
@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script>
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -33,33 +33,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Embed a lifecycle badge in documentation — badge" />
-<meta property="og:description" content="To include lifecycle badges in your documentation:
-Call usethis::use_lifecycle() to copy the badge images into the
-man/ folder of your package.
-Call lifecycle::badge() inside R backticks to insert a
-lifecycle badge:#' `r lifecycle::badge(&quot;experimental&quot;)`
-#' `r lifecycle::badge(&quot;deprecated&quot;)`
-#' `r lifecycle::badge(&quot;superseded&quot;)`
-
-
-If the deprecated feature is a function, a good place for this
-badge is at the top of the topic description. If it is an argument,
-you can put the badge in the argument description.
-
-
-The badge is displayed as an image in the HTML version of the
-documentation and as text otherwise.
-lifecycle::badge() is run by roxygen at build time so you don't need
-to add lifecycle to Imports: just to use the badges. However, it's still
-good practice to add to Suggests: so that it will be available to
-package developers." />
+<meta property="og:title" content="License" />
 
 
 
@@ -88,7 +68,7 @@ package developers." />
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,7 +80,7 @@ package developers." />
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">lifecycle</a>
+        <a class="navbar-link" href="index.html">lifecycle</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
       </span>
     </div>
@@ -108,13 +88,13 @@ package developers." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -124,18 +104,18 @@ package developers." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/stages.html">Lifecycle stages</a>
+      <a href="articles/stages.html">Lifecycle stages</a>
     </li>
     <li>
-      <a href="../articles/manage.html">Manage lifecycle changes in functions you use</a>
+      <a href="articles/manage.html">Manage lifecycle changes in functions you use</a>
     </li>
     <li>
-      <a href="../articles/communicate.html">Communicate lifecycle changes in your functions</a>
+      <a href="articles/communicate.html">Communicate lifecycle changes in your functions</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -156,73 +136,25 @@ package developers." />
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>Embed a lifecycle badge in documentation</h1>
-    <small class="dont-index">Source: <a href='https://github.com/r-lib/lifecycle/blob/master/R/badge.R'><code>R/badge.R</code></a></small>
-    <div class="hidden name"><code>badge.Rd</code></div>
+      <h1>License</h1>
     </div>
 
-    <div class="ref-description">
-    <p>To include lifecycle badges in your documentation:</p><ol>
-<li><p>Call <code>usethis::use_lifecycle()</code> to copy the badge images into the
-<code>man/</code> folder of your package.</p></li>
-<li><p>Call <code>lifecycle::badge()</code> inside R backticks to insert a
-lifecycle badge:</p><pre><span class='co'>#' `r lifecycle::badge("experimental")`</span>
-<span class='co'>#' `r lifecycle::badge("deprecated")`</span>
-<span class='co'>#' `r lifecycle::badge("superseded")`</span>
+<pre>YEAR: 2020
+COPYRIGHT HOLDER: RStudio
 </pre>
 
-<p>If the deprecated feature is a function, a good place for this
-badge is at the top of the topic description. If it is an argument,
-you can put the badge in the argument description.</p></li>
-</ol>
-
-<p>The badge is displayed as an image in the HTML version of the
-documentation and as text otherwise.</p>
-<p><code>lifecycle::badge()</code> is run by roxygen at build time so you don't need
-to add lifecycle to <code>Imports:</code> just to use the badges. However, it's still
-good practice to add to <code>Suggests:</code> so that it will be available to
-package developers.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>badge</span><span class='op'>(</span><span class='va'>stage</span><span class='op'>)</span></pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>stage</th>
-      <td><p>A lifecycle stage as a string. Must be one of
-<code>"experimental"</code>, <code>"stable"</code>, <code>"questioning"</code>, <code>"superseded"</code>, or
-<code>"deprecated"</code>.</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>An <code>Rd</code> expression describing the lifecycle stage.</p>
-    <h2 class="hasAnchor" id="badges"><a class="anchor" href="#badges"></a>Badges</h2>
-
-    
-
-<ul>
-<li><p><a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a> <code>lifecycle::badge("experimental")</code></p></li>
-<li><p><a href='https://www.tidyverse.org/lifecycle/#stable'><img src='figures/lifecycle-stable.svg' alt='Stable lifecycle'></a> <code>lifecycle::badge("stable")</code></p></li>
-<li><p><a href='https://www.tidyverse.org/lifecycle/#superseded'><img src='figures/lifecycle-superseded.svg' alt='Superseded lifecycle'></a> <code>lifecycle::badge("superseded")</code></p></li>
-<li><p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /> <code>lifecycle::badge("deprecated")</code></p></li>
-</ul>
-
-<p>The meaning of these stages is described in
-<code><a href='../articles/stages.html'>vignette("stages")</a></code>.</p>
-
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
+
 
 
       <footer>
