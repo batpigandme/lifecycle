@@ -101,7 +101,7 @@ package developers." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lifecycle</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -134,8 +134,22 @@ package developers." />
     </li>
   </ul>
 </li>
-<li>
-  <a href="../news/index.html">Changelog</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    News
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Releases</li>
+    <li>
+      <a href="https://www.tidyverse.org/blog/2021/02/lifecycle-1-0-0/">lifecycle 1.0.0</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="../news/index.html">Changelog</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -194,8 +208,7 @@ package developers.</p>
     <tr>
       <th>stage</th>
       <td><p>A lifecycle stage as a string. Must be one of
-<code>"experimental"</code>, <code>"stable"</code>, <code>"questioning"</code>, <code>"superseded"</code>, or
-<code>"deprecated"</code>.</p></td>
+<code>"experimental"</code>, <code>"stable"</code>, <code>"superseded"</code>, or <code>"deprecated"</code>.</p></td>
     </tr>
     </table>
 
@@ -207,10 +220,10 @@ package developers.</p>
     
 
 <ul>
-<li><p><a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a> <code>lifecycle::badge("experimental")</code></p></li>
-<li><p><a href='https://www.tidyverse.org/lifecycle/#stable'><img src='figures/lifecycle-stable.svg' alt='Stable lifecycle'></a> <code>lifecycle::badge("stable")</code></p></li>
-<li><p><a href='https://www.tidyverse.org/lifecycle/#superseded'><img src='figures/lifecycle-superseded.svg' alt='Superseded lifecycle'></a> <code>lifecycle::badge("superseded")</code></p></li>
-<li><p><img src='figures/lifecycle-deprecated.svg' alt='Deprecated lifecycle' /> <code>lifecycle::badge("deprecated")</code></p></li>
+<li><p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a> <code>lifecycle::badge("experimental")</code></p></li>
+<li><p><a href='https://lifecycle.r-lib.org/articles/stages.html#stable'><img src='figures/lifecycle-stable.svg' alt='[Stable]' /></a> <code>lifecycle::badge("stable")</code></p></li>
+<li><p><a href='https://lifecycle.r-lib.org/articles/stages.html#superseded'><img src='figures/lifecycle-superseded.svg' alt='[Superseded]' /></a> <code>lifecycle::badge("superseded")</code></p></li>
+<li><p><a href='https://lifecycle.r-lib.org/articles/stages.html#deprecated'><img src='figures/lifecycle-deprecated.svg' alt='[Deprecated]' /></a> <code>lifecycle::badge("deprecated")</code></p></li>
 </ul>
 
 <p>The meaning of these stages is described in
@@ -227,7 +240,7 @@ package developers.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Lionel Henry.</p>
+  <p>Developed by Lionel Henry, <a href='http://hadley.nz'>Hadley Wickham</a>.</p>
 </div>
 
 <div class="pkgdown">

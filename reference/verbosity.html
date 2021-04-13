@@ -97,7 +97,7 @@ errors." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lifecycle</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -130,8 +130,22 @@ errors." />
     </li>
   </ul>
 </li>
-<li>
-  <a href="../news/index.html">Changelog</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    News
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Releases</li>
+    <li>
+      <a href="https://www.tidyverse.org/blog/2021/02/lifecycle-1-0-0/">lifecycle 1.0.0</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="../news/index.html">Changelog</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -212,8 +226,11 @@ errors.</p>
 #&gt; </span><span style='color: #555555;'> 1. </span><span>rlang::with_options(...)
 #&gt; </span><span style='color: #555555;'> 7. </span><span>mytool()
 #&gt; 
-#&gt; ── </span><span style='color: #BBBB00;font-weight: bold;'>Failure</span><span style='font-weight: bold;'> (&lt;text&gt;:12:5): mytool is deprecated</span><span> ─────────────────────────────────
+#&gt; ── </span><span style='color: #FFAF00;font-weight: bold;'>Failure</span><span style='font-weight: bold;'> (&lt;text&gt;:12:5): mytool is deprecated</span><span> ─────────────────────────────────
 #&gt; `mytool()` did not throw an error.
+#&gt; </span><span style='font-weight: bold;'>Backtrace:</span><span>
+#&gt; </span><span style='color: #555555;'> 1. </span><span>rlang::with_options(...)
+#&gt; </span><span style='color: #555555;'> 2. </span><span>testthat::expect_error(mytool(), class = "defunctError")
 #&gt; 
 #&gt; </span><span style='color: #00BB00;'>Test passed</span><span> 🥇</div><div class='input'>
 </div></span></pre>
@@ -228,7 +245,7 @@ errors.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Lionel Henry.</p>
+  <p>Developed by Lionel Henry, <a href='http://hadley.nz'>Hadley Wickham</a>.</p>
 </div>
 
 <div class="pkgdown">

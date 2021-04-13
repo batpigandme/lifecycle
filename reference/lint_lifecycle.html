@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Display last deprecation warnings — last_warnings • lifecycle</title>
+<title>Lint usages of functions that have a non-stable life cycle. — pkg_lifecycle_statuses • lifecycle</title>
 
 
 <!-- jquery -->
@@ -39,19 +39,18 @@
 
 
 
-<meta property="og:title" content="Display last deprecation warnings — last_warnings" />
-<meta property="og:description" content="Call these helpers to see the last deprecation warnings along with
-their backtrace:
-last_warnings() returns a list of all warnings that occurred
-during the last top-level R command.
-last_warning() returns only the last.
+<meta property="og:title" content="Lint usages of functions that have a non-stable life cycle. — pkg_lifecycle_statuses" />
+<meta property="og:description" content="
 
+lint_lifecycle dynamically queries the package documentation for packages
+in packages for lifecycle annotations and then searches the directory in
+path for usages of those functions.
+lint_tidyverse_lifecycle is a convenience function to call lint_lifecycle
+for all the packages in the tidyverse.
+pkg_lifecycle_statuses returns a data frame of functions with lifecycle
+annotations for an installed package.
 
-If you call these in the console, these warnings are printed with a
-backtrace. Use print(last_warnings(), simplify = level) to
-control the verbosity of the backtrace. The simplify argument
-supports one of &quot;branch&quot; (the default), &quot;collapse&quot;, and
-&quot;none&quot; (in increasing order of verbosity)." />
+" />
 
 
 
@@ -164,56 +163,75 @@ supports one of &quot;branch&quot; (the default), &quot;collapse&quot;, and
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Display last deprecation warnings</h1>
-    <small class="dont-index">Source: <a href='https://github.com/r-lib/lifecycle/blob/master/R/warning.R'><code>R/warning.R</code></a></small>
-    <div class="hidden name"><code>last_warnings.Rd</code></div>
+    <h1>Lint usages of functions that have a non-stable life cycle.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/r-lib/lifecycle/blob/master/R/lint.R'><code>R/lint.R</code></a></small>
+    <div class="hidden name"><code>lint_lifecycle.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Call these helpers to see the last deprecation warnings along with
-their backtrace:</p><ul>
-<li><p><code>last_warnings()</code> returns a list of all warnings that occurred
-during the last top-level R command.</p></li>
-<li><p><code>last_warning()</code> returns only the last.</p></li>
+    
+<ul>
+<li><p><code>lint_lifecycle</code> dynamically queries the package documentation for packages
+in <code>packages</code> for lifecycle annotations and then searches the directory in
+<code>path</code> for usages of those functions.</p></li>
+<li><p><code>lint_tidyverse_lifecycle</code> is a convenience function to call <code>lint_lifecycle</code>
+for all the packages in the tidyverse.</p></li>
+<li><p><code>pkg_lifecycle_statuses</code> returns a data frame of functions with lifecycle
+annotations for an installed package.</p></li>
 </ul>
 
-<p>If you call these in the console, these warnings are printed with a
-backtrace. Use <code><a href='https://rdrr.io/r/base/print.html'>print(last_warnings(), simplify = level)</a></code> to
-control the verbosity of the backtrace. The <code>simplify</code> argument
-supports one of <code>"branch"</code> (the default), <code>"collapse"</code>, and
-<code>"none"</code> (in increasing order of verbosity).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>last_warnings</span><span class='op'>(</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>pkg_lifecycle_statuses</span><span class='op'>(</span>
+  <span class='va'>package</span>,
+  which <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"superseded"</span>, <span class='st'>"deprecated"</span>, <span class='st'>"questioning"</span>, <span class='st'>"defunct"</span>, <span class='st'>"experimental"</span>,
+    <span class='st'>"soft-deprecated"</span>, <span class='st'>"retired"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>last_warning</span><span class='op'>(</span><span class='op'>)</span></pre>
+<span class='fu'>lint_lifecycle</span><span class='op'>(</span>
+  <span class='va'>packages</span>,
+  path <span class='op'>=</span> <span class='st'>"."</span>,
+  pattern <span class='op'>=</span> <span class='st'>"[.][Rr](md)?"</span>,
+  which <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"superseded"</span>, <span class='st'>"deprecated"</span>, <span class='st'>"questioning"</span>, <span class='st'>"defunct"</span>, <span class='st'>"experimental"</span>,
+    <span class='st'>"soft-deprecated"</span>, <span class='st'>"retired"</span><span class='op'>)</span>
+<span class='op'>)</span>
+
+<span class='fu'>lint_tidyverse_lifecycle</span><span class='op'>(</span>
+  path <span class='op'>=</span> <span class='st'>"."</span>,
+  pattern <span class='op'>=</span> <span class='st'>"[.][Rr](md)?"</span>,
+  which <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"superseded"</span>, <span class='st'>"deprecated"</span>, <span class='st'>"questioning"</span>, <span class='st'>"defunct"</span>, <span class='st'>"experimental"</span>,
+    <span class='st'>"soft-deprecated"</span>, <span class='st'>"retired"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>package</th>
+      <td><p>The name of an installed package.</p></td>
+    </tr>
+    <tr>
+      <th>which</th>
+      <td><p>The lifecycle statuses to retrieve.
+Include <code>NA</code> if you want to include functions without a specified lifecycle
+status in the results.</p></td>
+    </tr>
+    <tr>
+      <th>packages</th>
+      <td><p>One or more installed packages to query for lifecycle statuses.</p></td>
+    </tr>
+    <tr>
+      <th>path</th>
+      <td><p>The directory path to the files you want to search.</p></td>
+    </tr>
+    <tr>
+      <th>pattern</th>
+      <td><p>Any files matching this pattern will be searched. The default
+searches any files ending in <code>.R</code> or <code>.Rmd</code>.</p></td>
+    </tr>
+    </table>
 
 
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># These examples are not run because `last_warnings()` does not</span>
-<span class='co'># work well within knitr and pkgdown</span>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-
-<span class='va'>f</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span><span class='op'>(</span><span class='fu'>g</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>g</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'>h</span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'>i</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>h</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='fu'><a href='deprecate_soft.html'>deprecate_warn</a></span><span class='op'>(</span><span class='st'>"1.0.0"</span>, <span class='st'>"this()"</span><span class='op'>)</span>
-<span class='va'>i</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='op'>)</span> <span class='fu'><a href='deprecate_soft.html'>deprecate_warn</a></span><span class='op'>(</span><span class='st'>"1.0.0"</span>, <span class='st'>"that()"</span><span class='op'>)</span>
-<span class='fu'>f</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='co'># Print all the warnings that occurred during the last command:</span>
-<span class='fu'>last_warnings</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='co'># Print only the last one:</span>
-<span class='fu'>last_warning</span><span class='op'>(</span><span class='op'>)</span>
-
-
-<span class='co'># By default, the backtraces are printed in their simplified form.</span>
-<span class='co'># Use `simplify` to control the verbosity:</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>last_warnings</span><span class='op'>(</span><span class='op'>)</span>, simplify <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
-
-<span class='op'>}</span>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

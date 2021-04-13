@@ -22,7 +22,13 @@
     <loc>https://lifecycle.r-lib.org/reference/lifecycle-package.html</loc>
   </url>
   <url>
+    <loc>https://lifecycle.r-lib.org/reference/lint_lifecycle.html</loc>
+  </url>
+  <url>
     <loc>https://lifecycle.r-lib.org/reference/signal_experimental.html</loc>
+  </url>
+  <url>
+    <loc>https://lifecycle.r-lib.org/reference/signal_stage.html</loc>
   </url>
   <url>
     <loc>https://lifecycle.r-lib.org/reference/verbosity.html</loc>
